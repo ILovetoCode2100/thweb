@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 33% 96%; /* #FAF8F0 Warm Beige */
+    --foreground: 0 0% 20%; /* #333333 Dark Charcoal */
+
+    --primary: 152 23% 71%; /* #A8C1B4 Sage Green */
+    --primary-foreground: 0 0% 20%; /* Dark Charcoal for contrast */
+
+    --secondary: 0 0% 96%; /* #F5F5F5 Off-white */
+    --secondary-foreground: 0 0% 20%; /* Dark Charcoal */
+
+    --accent: 28 100% 86%; /* #FFDAB9 Muted Peach */
+    --accent-foreground: 0 0% 20%; /* Dark Charcoal */
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 13% 45%;
+
+    --card: 48 50% 98%; /* #FCFBF7 - NEW Soft Off-White */
+    --card-foreground: 0 0% 20%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+
+    --radius: 0.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-base leading-relaxed;
+  }
+
+  h1,
+  .h1 {
+    @apply text-4xl font-bold leading-tight text-gray-800 md:text-5xl;
+  }
+
+  h2,
+  .h2 {
+    @apply text-3xl font-bold leading-tight text-gray-800 md:text-4xl;
+  }
+
+  h3,
+  .h3 {
+    @apply text-2xl font-semibold leading-tight text-gray-800 md:text-3xl;
+  }
+
+  h4,
+  .h4 {
+    @apply text-xl font-semibold leading-tight text-gray-800;
+  }
+
+  p {
+    @apply mb-4 max-w-prose; /* Constrain line length for readability */
+  }
+
+  .lead {
+    @apply text-lg text-gray-600 md:text-xl;
+  }
+
+  .small {
+    @apply text-sm text-gray-500;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus {
+    @apply outline-none;
+  }
+
+  *:focus-visible {
+    @apply ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 px-4 py-2 rounded-full font-semibold transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 px-4 py-2 rounded-full font-semibold transition-colors;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-card rounded-xl shadow-soft p-6 border border-border;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+}
