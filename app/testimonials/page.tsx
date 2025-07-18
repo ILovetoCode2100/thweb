@@ -108,10 +108,13 @@ const stats = [
 ]
 
 export default function TestimonialsPage() {
+  const GOOGLE_CALENDAR_URL =
+    "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0vfPFospMogOJuYcXc7z-99U7EP_jaZCQDbPU="
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 pt-32 pb-12">
+      <section className="pt-32 pb-12">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,8 +123,8 @@ export default function TestimonialsPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">Client Success Stories</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">Real People, Real Results</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h1 className="mb-6 text-primary">Real People, Real Results</h1>
+            <p className="lead max-w-3xl mx-auto">
               Discover how hypnotherapy has transformed the lives of clients across Scotland. These are genuine
               testimonials from real people who've experienced lasting positive change.
             </p>
@@ -179,8 +182,8 @@ export default function TestimonialsPage() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                        <p className="text-sm text-gray-500">{testimonial.location}</p>
+                        <h4 className="text-lg font-semibold">{testimonial.name}</h4>
+                        <p className="small">{testimonial.location}</p>
                       </div>
                     </div>
                     {testimonial.verified && (
@@ -249,8 +252,8 @@ export default function TestimonialsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Video Testimonials</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="mb-6">Video Testimonials</h2>
+            <p className="lead max-w-3xl mx-auto">
               Hear directly from clients about their hypnotherapy journey and transformation
             </p>
           </motion.div>
@@ -283,7 +286,7 @@ export default function TestimonialsPage() {
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                   </div>
                   <div className="p-4">
-                    <p className="text-sm text-gray-600">
+                    <p className="small">
                       {video === 1
                         ? "Watch Sarah share how hypnotherapy helped her overcome 15 years of anxiety"
                         : "Discover how James quit smoking after 20 years in just one session"}
@@ -308,13 +311,13 @@ export default function TestimonialsPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Write Your Success Story?</h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <h2 className="mb-6">Ready to Write Your Success Story?</h2>
+            <p className="lead mb-8">
               Join hundreds of satisfied clients who have transformed their lives through hypnotherapy. Your journey to
               positive change starts with a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg hover:shadow-xl transition-all group"

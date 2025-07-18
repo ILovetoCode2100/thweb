@@ -2,17 +2,21 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
+const GOOGLE_CALENDAR_URL =
+  "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0vfPFospMogOJuYcXc7z-99U7EP_jaZCQDbPU="
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "How It Works", href: "/how-it-works" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Navigation() {
@@ -20,55 +24,58 @@ export function Navigation() {
   const pathname = usePathname()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-card/80 backdrop-blur-md shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-primary/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-800">Taylored Hypnotherapy</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/site-logo.png"
+              alt="Taylored Solution Focused Hypnotherapy Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
+            <span className="font-serif font-bold text-xl text-gray-800 hidden sm:inline">
+              Taylored Solution Focused Hypnotherapy
+            </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`relative px-3 py-2 text-sm font-semibold transition-colors ${
-                  pathname === link.href ? "text-primary" : "text-gray-600 hover:text-primary"
-                }`}
-              >
-                {link.name}
-                {pathname === link.href && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                    layoutId="underline"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                )}
+          <div className="hidden lg:flex items-center space-x-2">
+            <nav className="flex items-center space-x-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={cn(
+                    "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                    pathname === link.href
+                      ? "bg-primary/10 text-primary"
+                      : "text-gray-600 hover:bg-primary/5 hover:text-primary",
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <Button asChild size="sm">
+              <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
+                Book Free Consultation
               </Link>
-            ))}
-          </nav>
-
-          <div className="hidden lg:block">
-            <Link href="/book">
-              <Button>Book Consultation</Button>
-            </Link>
+            </Button>
           </div>
 
           <div className="lg:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="p-2" aria-label="Open menu">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-md text-gray-600 hover:bg-primary/5 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              aria-label="Toggle menu"
+            >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                )}
               </svg>
             </button>
           </div>
@@ -81,29 +88,30 @@ export function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg"
+            className="lg:hidden bg-background/95 backdrop-blur-sm border-t border-primary/10"
           >
-            <nav className="flex flex-col p-4">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 rounded-md text-base font-medium ${
-                    pathname === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-gray-600 hover:bg-gray-100 hover:text-primary"
-                  }`}
+                  className={cn(
+                    "block px-3 py-2 rounded-md text-base font-medium",
+                    pathname === link.href ? "bg-primary/10 text-primary" : "text-gray-600 hover:bg-primary/5",
+                  )}
                 >
-                  {link.name}
+                  {link.label}
                 </Link>
               ))}
-              <div className="mt-4">
-                <Link href="/book">
-                  <Button className="w-full">Book Free Consultation</Button>
+            </div>
+            <div className="border-t border-primary/10 px-4 py-4">
+              <Button asChild className="w-full">
+                <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
+                  Book Free Consultation
                 </Link>
-              </div>
-            </nav>
+              </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

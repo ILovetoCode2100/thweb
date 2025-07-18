@@ -7,6 +7,9 @@ import Link from "next/link"
 import Image from "next/image"
 
 export function HeroSection() {
+  const GOOGLE_CALENDAR_URL =
+    "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0vfPFospMogOJuYcXc7z-99U7EP_jaZCQDbPU="
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-20">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-background bg-[length:200%_200%] animate-gradient" />
@@ -32,7 +35,7 @@ export function HeroSection() {
                     clipRule="evenodd"
                   />
                 </svg>
-                NCH & GHR Registered Clinical Hypnotherapist
+                NCH Registered Clinical Hypnotherapist
               </Badge>
             </motion.div>
 
@@ -40,7 +43,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-primary"
+              className="text-display mb-6 text-primary"
             >
               Unlock Your Potential with Taylored Hypnotherapy
             </motion.h1>
@@ -49,7 +52,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="lead mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               A professional, solution-focused approach to help you overcome anxiety, build confidence, and achieve your
               goals.
@@ -61,7 +64,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Link href="/book">
+              <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all group w-full sm:w-auto"

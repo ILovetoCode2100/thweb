@@ -7,9 +7,12 @@ import { Button } from "@/components/ui/button"
 import { ThistleDivider } from "@/components/thistle-divider"
 
 export default function AboutPage() {
+  const GOOGLE_CALENDAR_URL =
+    "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0vfPFospMogOJuYcXc7z-99U7EP_jaZCQDbPU="
+
   return (
     <>
-      <section>
+      <section className="pt-32 pb-0">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -17,7 +20,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="mb-6 text-primary">Meet Morven Taylor-Slater</h1>
+            <h1 className="mb-6 text-primary font-serif">Meet Morven Taylor-Slater</h1>
             <p className="lead">
               Your dedicated partner in achieving lasting positive change through professional, solution-focused
               hypnotherapy.
@@ -28,7 +31,7 @@ export default function AboutPage() {
 
       <ThistleDivider />
 
-      <section className="py-20">
+      <section className="pt-0 pb-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
             <motion.div
@@ -54,13 +57,13 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="mb-6">My Journey to Hypnotherapy</h2>
+              <h2 className="mb-6 font-serif">My Journey to Hypnotherapy</h2>
 
               <div className="space-y-4 text-lg text-gray-600">
                 <p>
                   Hello, I'm Morven. Welcome to{" "}
-                  <strong className="text-gray-700">Taylored Solution Focused Hypnotherapy</strong>. If you are looking
-                  for change, you are in the right place.
+                  <strong className="font-semibold text-gray-700">Taylored Solution Focused Hypnotherapy</strong>. If
+                  you are looking for change, you are in the right place.
                 </p>
                 <p>
                   Life is meant to be lived and enjoyed, but challenges can sometimes hold us back. My own experiences
@@ -75,18 +78,8 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 bg-primary/5 p-6 rounded-lg">
-                <h3 className="mb-4">Professional Qualifications & Memberships</h3>
-                <ul className="space-y-3 text-gray-600 text-base">
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                    </svg>
-                    <span>Diploma in Clinical Hypnotherapy (DipCH)</span>
-                  </li>
+                <h3 className="mb-4 font-serif">Professional Qualifications & Memberships</h3>
+                <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
                     <svg
                       className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
@@ -96,16 +89,6 @@ export default function AboutPage() {
                       <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg>
                     <span>Registered Member of the National Council for Hypnotherapy (NCH)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                    </svg>
-                    <span>Registered Member of the General Hypnotherapy Register (GHR)</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -126,7 +109,7 @@ export default function AboutPage() {
 
       <ThistleDivider />
 
-      <section className="py-20">
+      <section className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -135,12 +118,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="mb-6">Ready to Begin Your Journey?</h2>
+            <h2 className="mb-6 font-serif">Ready to Begin Your Journey?</h2>
             <p className="lead mb-8">
               Take the first step towards positive change. Book your free, no-obligation consultation today and discover
               how hypnotherapy can be taylored to help you.
             </p>
-            <Link href="/book">
+            <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
                 Book Your Free Consultation
               </Button>

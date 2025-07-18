@@ -38,9 +38,12 @@ const processSteps = [
 ]
 
 export default function HowItWorksPage() {
+  const GOOGLE_CALENDAR_URL =
+    "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0vfPFospMogOJuYcXc7z-99U7EP_jaZCQDbPU="
+
   return (
     <>
-      <section className="relative pt-32 pb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="pt-32 pb-0">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -48,8 +51,8 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">A Clear Path to Positive Change</h1>
-            <p className="text-xl text-gray-600">
+            <h1 className="mb-6 text-primary">A Clear Path to Positive Change</h1>
+            <p className="lead">
               My process is simple, transparent, and designed to be a collaborative partnership from start to finish.
             </p>
           </motion.div>
@@ -58,7 +61,7 @@ export default function HowItWorksPage() {
 
       <ThistleDivider />
 
-      <section className="py-20">
+      <section className="pt-0 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-12">
             {processSteps.map((step, index) => (
@@ -76,10 +79,10 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
                   <Card className="p-8 shadow-lg w-full">
-                    <h3 className="text-2xl font-bold text-center mb-4">
+                    <h3 className="text-center mb-4">
                       Step {step.step}: {step.title}
                     </h3>
-                    <p className="text-gray-600 text-lg text-center">{step.description}</p>
+                    <p className="text-gray-600 text-center">{step.description}</p>
                   </Card>
                 </div>
               </motion.div>
@@ -99,11 +102,11 @@ export default function HowItWorksPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl font-bold mb-6">Ready to Take the First Step?</h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <h2 className="mb-6">Ready to Take the First Step?</h2>
+            <p className="lead mb-8">
               Your journey begins with a simple conversation. Book your free, no-obligation consultation today.
             </p>
-            <Link href="/book">
+            <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
                 Book Your Free Consultation
               </Button>

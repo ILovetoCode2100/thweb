@@ -84,9 +84,9 @@ export default function Home() {
                 </svg>
               </div>
               <h4 className="mb-2">Professional Standards</h4>
-              <p className="text-gray-600 text-base">
-                As a registered member of the NCH and GHR, I am committed to continuous professional development and the
-                highest ethical standards.
+              <p className="text-gray-600">
+                As a registered member of the NCH, I am committed to continuous professional development and the highest
+                ethical standards.
               </p>
             </Card>
             <Card className="p-8 text-center shadow-md hover:shadow-xl transition-shadow">
@@ -101,7 +101,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4 className="mb-2">Strict Confidentiality</h4>
-              <p className="text-gray-600 text-base">
+              <p className="text-gray-600">
                 Your privacy is paramount. All sessions and communications are held in the strictest confidence,
                 adhering to professional ethical codes.
               </p>
@@ -118,7 +118,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4 className="mb-2">Solution-Focused</h4>
-              <p className="text-gray-600 text-base">
+              <p className="text-gray-600">
                 My approach is positive and forward-looking. We focus on your strengths and preferred future, not on
                 dwelling on the past.
               </p>
@@ -161,7 +161,7 @@ export default function Home() {
                         <service.icon className="w-8 h-8 text-primary" />
                       </div>
                       <h4 className="mb-4 group-hover:text-primary transition-colors">{service.title}</h4>
-                      <p className="text-gray-600 leading-relaxed text-base">{service.description}</p>
+                      <p className="text-gray-600 leading-relaxed">{service.description}</p>
                     </div>
                     <div className="p-8 pt-0 mt-auto">
                       <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all text-sm">
@@ -223,8 +223,8 @@ export default function Home() {
                   providing a modern, evidence-based approach to help you achieve your goals.
                 </p>
                 <p>
-                  As a registered member of the National Council for Hypnotherapy (NCH) and the General Hypnotherapy
-                  Register (GHR), I maintain the highest professional standards.
+                  As a registered member of the National Council for Hypnotherapy (NCH), I maintain the highest
+                  professional standards.
                 </p>
               </div>
 

@@ -17,7 +17,7 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#A8C1B4",
+          DEFAULT: "#829D8C",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -47,6 +47,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
+        serif: ["var(--font-serif)"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -7,8 +7,8 @@
     --background: 48 33% 96%; /* #FAF8F0 Warm Beige */
     --foreground: 0 0% 20%; /* #333333 Dark Charcoal */
 
-    --primary: 152 23% 71%; /* #A8C1B4 Sage Green */
-    --primary-foreground: 0 0% 20%; /* Dark Charcoal for contrast */
+    --primary: 145 12% 56%; /* #829D8C Deep Sage */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
 
     --secondary: 0 0% 96%; /* #F5F5F5 Off-white */
     --secondary-foreground: 0 0% 20%; /* Dark Charcoal */
@@ -36,24 +36,28 @@
     @apply bg-background text-foreground font-sans text-base leading-relaxed;
   }
 
+  .text-display {
+    @apply font-serif text-5xl font-semibold leading-tight tracking-tight text-gray-800 md:text-6xl;
+  }
+
   h1,
   .h1 {
-    @apply text-4xl font-bold leading-tight text-gray-800 md:text-5xl;
+    @apply font-serif text-4xl font-semibold leading-tight tracking-tight text-gray-800 md:text-5xl;
   }
 
   h2,
   .h2 {
-    @apply text-3xl font-bold leading-tight text-gray-800 md:text-4xl;
+    @apply font-serif text-3xl font-semibold leading-tight tracking-tight text-gray-800 md:text-4xl;
   }
 
   h3,
   .h3 {
-    @apply text-2xl font-semibold leading-tight text-gray-800 md:text-3xl;
+    @apply font-serif text-2xl font-medium leading-tight text-gray-800;
   }
 
   h4,
   .h4 {
-    @apply text-xl font-semibold leading-tight text-gray-800;
+    @apply font-serif text-xl font-medium leading-tight text-gray-800;
   }
 
   p {

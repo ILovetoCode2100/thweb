@@ -14,9 +14,12 @@ type ServiceDetailProps = {
 }
 
 export default function ServiceDetailClient({ service }: ServiceDetailProps) {
+  const GOOGLE_CALENDAR_URL =
+    "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0vfPFospMogOJuYcXc7z-99U7EP_jaZCQDbPU="
+
   return (
     <>
-      <section>
+      <section className="pt-32 pb-12">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +84,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailProps) {
               >
                 <Card className="shadow-lg">
                   <CardHeader>
-                    <CardTitle className="text-2xl">Benefits You Can Work Towards</CardTitle>
+                    <CardTitle as="h3" className="h3">
+                      Benefits You Can Work Towards
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
@@ -98,7 +103,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailProps) {
                         </li>
                       ))}
                     </ul>
-                    <Link href="/book">
+                    <Link href={GOOGLE_CALENDAR_URL} target="_blank" rel="noopener noreferrer">
                       <Button size="lg" className="w-full mt-6">
                         Book a Free Consultation
                       </Button>
@@ -108,7 +113,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailProps) {
 
                 <Card className="mt-8">
                   <CardHeader>
-                    <CardTitle className="text-2xl">Related Services</CardTitle>
+                    <CardTitle as="h3" className="h3">
+                      Related Services
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">

@@ -42,7 +42,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="pt-32 pb-12">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -50,10 +50,8 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Insights from the <span className="text-gradient">Mind</span>
-            </h1>
-            <p className="text-xl text-gray-600">
+            <h1 className="mb-6 text-primary">Insights from the Mind</h1>
+            <p className="lead">
               Explore articles on hypnotherapy, personal growth, and the science of change to empower your journey.
             </p>
           </motion.div>
@@ -77,11 +75,11 @@ export default function BlogPage() {
                 <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div className="p-6 flex-grow">
                     <p className="text-sm text-primary font-semibold mb-2">{post.category}</p>
-                    <h2 className="text-2xl font-bold mb-4 line-clamp-3">
+                    <h3 className="mb-4 line-clamp-3">
                       <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
                         {post.title}
                       </Link>
-                    </h2>
+                    </h3>
                     <p className="text-gray-600 mb-4 line-clamp-4 flex-grow">{post.excerpt}</p>
                   </div>
                   <div className="p-6 bg-primary/5 border-t">

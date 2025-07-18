@@ -60,7 +60,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <section>
+      <section className="pt-32 pb-0">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function ServicesPage() {
 
       <ThistleDivider />
 
-      <section className="py-20">
+      <section className="pt-0 pb-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
@@ -96,7 +96,7 @@ export default function ServicesPage() {
                       <service.icon className="w-7 h-7 text-primary" />
                     </div>
                     <h4 className="mb-3">{service.title}</h4>
-                    <p className="text-gray-600 mb-4 text-base">{service.description}</p>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
 
                     <div className="mb-6">
                       <p className="text-sm font-semibold text-gray-500 mb-2">Can help with:</p>

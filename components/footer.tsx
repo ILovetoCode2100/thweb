@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,23 +8,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              </div>
+              <Image
+                src="/site-logo.png"
+                alt="Taylored Hypnotherapy Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
               <div>
-                <h3 className="text-xl font-bold text-gray-800">Taylored Hypnotherapy</h3>
-                <p className="text-gray-500 text-sm">Solution Focused Hypnotherapy</p>
+                <h4 className="text-gray-800">Taylored Hypnotherapy</h4>
+                <p className="small !mb-0">Solution Focused Hypnotherapy</p>
               </div>
             </div>
             <p className="text-gray-600 mb-6 max-w-md">
-              A professional and confidential service dedicated to helping you achieve your goals. NCH & GHR registered
+              A professional and confidential service dedicated to helping you achieve your goals. NCH registered
               practitioner.
             </p>
             <div className="space-y-3">
@@ -66,11 +64,28 @@ export function Footer() {
                   morven@tayloredhypnotherapy.com
                 </a>
               </div>
+              <div className="flex items-start gap-3">
+                <svg
+                  className="w-5 h-5 text-primary flex-shrink-0 mt-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="text-gray-700 font-medium">3 Ennis Park, Polbeth, West Calder EH55 8TN</span>
+              </div>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-800 mb-6">Quick Links</h4>
+            <h4 className="mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {[
                 { label: "About Me", href: "/about" },
@@ -89,7 +104,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-800 mb-6">Services</h4>
+            <h4 className="mb-6">Services</h4>
             <ul className="space-y-3">
               {[
                 "Anxiety & Stress Relief",
@@ -109,14 +124,14 @@ export function Footer() {
 
         <div className="border-t border-primary/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm text-center md:text-left">
+            <p className="small text-center md:text-left">
               © {new Date().getFullYear()} TAYLORED SOLUTION FOCUSED HYPNOTHERAPY LTD. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-primary text-sm transition-colors">
+              <Link href="/privacy-policy" className="small hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-primary text-sm transition-colors">
+              <Link href="/terms" className="small hover:text-primary transition-colors">
                 Terms & Conditions
               </Link>
             </div>

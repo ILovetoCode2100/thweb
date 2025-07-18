@@ -101,7 +101,6 @@ export default function TermsPage() {
             <p>We maintain professional standards as required by:</p>
             <ul>
               <li>National Council for Hypnotherapy (NCH)</li>
-              <li>General Hypnotherapy Register (GHR)</li>
               <li>Professional insurance requirements</li>
             </ul>
 
@@ -130,8 +129,8 @@ export default function TermsPage() {
             <p>If you have any concerns about your treatment:</p>
             <ol>
               <li>First, please discuss with us directly</li>
-              <li>If unresolved, you may contact our professional bodies (NCH/GHR)</li>
-              <li>Both organisations have formal complaints procedures</li>
+              <li>If unresolved, you may contact our professional body (NCH)</li>
+              <li>The organisation has a formal complaints procedure</li>
             </ol>
 
             <h2>14. Changes to Terms</h2>
@@ -149,9 +148,9 @@ export default function TermsPage() {
             <h2>16. Contact Information</h2>
             <p>For questions about these terms, please contact:</p>
             <ul>
-              <li>Email: enquiries@hypnotherapyscotland.com</li>
-              <li>Phone: 07XXX XXXXXX</li>
-              <li>Address: [Business Address], Edinburgh, Scotland</li>
+              <li>Email: morven@tayloredhypnotherapy.com</li>
+              <li>Phone: +44 7801 279880</li>
+              <li>Address: 3 Ennis Park, Polbeth, West Calder EH55 8TN</li>
             </ul>
           </div>
         </div>
